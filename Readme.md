@@ -16,6 +16,7 @@ pip install -r requirements
 ```
 
 4. Создание config.py и настройка API-ключа OpenRouter
+
 Создайте config.py со следующим содержанием:
 ```python
 OPENROUTER_API_KEY = "API_KEY"
