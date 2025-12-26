@@ -34,7 +34,7 @@ class SearchAgent:
         parts = [p.strip() for p in text.split(",") if p.strip()]
         return parts
 
-    def search(self, user_query: str, k: int = 3) -> tuple[list[str], List[str]]:
+    def search(self, user_query: str) -> tuple[list[str], List[str]]:
         """Возвращает кортеж (keywords, релевантные текстовые фрагменты).
 
         keywords: список строк
@@ -44,4 +44,4 @@ class SearchAgent:
         query = ", ".join(keywords) if keywords else user_query
 
         results = self.data_agent.find_parcels(query)
-        return keywords, results[:k]
+        return keywords, results

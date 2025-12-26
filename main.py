@@ -29,7 +29,7 @@ def main():
             break
 
         # Первый шаг: поиск релевантного контекста
-        keywords, hits = search_agent.search(user_input, k=5)
+        keywords, hits = search_agent.search(user_input)
 
         if not hits:
             print("\nНичего релевантного не найдено в базе.")
@@ -40,12 +40,12 @@ def main():
 
         # Единый вывод в консоль в стандартизованной форме
         print("\n**Ответ**")
-        print(f"- **Answer:** {structured.get('answer')}\n")
+        print(f"{structured.get('answer')}\n")
         # print(f"- **Keywords:** {', '.join(structured.get('keywords', []))}")
         # print(f"- **Used context fragments:** {structured.get('used_context_count')}")
-        print("- **Relevant Parcels:**")
-        for p in structured.get('relevant_parcels', []):
-            print(f"  - {p.get('tracking_number')}: {p.get('snippet')}")
+        # print("- **Relevant Parcels:**")
+        # for p in structured.get('relevant_parcels', []):
+        #     print(f"  - {p.get('tracking_number')}: {p.get('snippet')}")
 
 
 if __name__ == "__main__":
